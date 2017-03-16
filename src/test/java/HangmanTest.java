@@ -1,5 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 public class HangmanTest {
 
@@ -15,17 +16,23 @@ public class HangmanTest {
     assertEquals("trophy", testHangman.getAnswer());
   }
 
-  // @Test
-  // public void newHangman_checkLetterAgainstAnswer_String() {
-  //   Hangman testHangman = new Hangman();
-  //   assertEquals("h", testHangman.checkLetter("h"));
-  // }
+  @Test
+  public void newHangman_checkLetterAgainstAnswer_String() {
+    Hangman testHangman = new Hangman();
+    assertEquals("h", testHangman.checkLetter("h"));
+  }
 
   @Test
   public void newHangman_correctLetterAddedToAnswerArray_Array() {
     Hangman testHangman = new Hangman();
-
-    assertEquals("p", testHangman.checkLetter("p"));
+    ArrayList<String> testArray = new ArrayList<String>();
+    testArray.add("_");
+    testArray.add("_");
+    testArray.add("_");
+    testArray.add("p");
+    testArray.add("_");
+    testArray.add("_");
+    assertEquals(testArray, testHangman.checkLetter("p"));
   }
 }
 

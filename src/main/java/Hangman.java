@@ -9,32 +9,30 @@ public class Hangman {
   private String mGuesses;
 
   // String[] possibleAnswers = {"cheese"};
-
+  ArrayList<String> solutionArray = new ArrayList<String>();
 
   public String getAnswer(){
-    return mAnswer = "trophy";
-  }
-
-  public String checkLetter(String letter){
     String gameSolution = "trophy";
-    List<String> solutionArray = new ArrayList<String>();
     for(int a = 0; a<gameSolution.length(); a++){
       solutionArray.add("_");
     }
-    System.out.println(solutionArray.size());
+    /*^^ Associate with mAnswer*/
+    mAnswer = "trophy";
+    return mAnswer;
+  }
+
+  public ArrayList checkLetter(String letter){
+/*Reference mAnswer as solutionArray*/
     int letterIndex = gameSolution.indexOf(letter);
-    System.out.println(letterIndex);
     if(letterIndex !=-1){
       solutionArray.set(letterIndex, letter);
       System.out.println(solutionArray.get(letterIndex));
-      return "ok";
+      return solutionArray;
     }else{
-      return "error";
+      return solutionArray;
     }
   }
 }
 
 
-// for(int i = 0; i < solutionLetters.length; i++ ){
-//   letter.indexOf()
-// }
+/*Move to Hangman class member variables*/
